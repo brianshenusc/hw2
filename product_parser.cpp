@@ -130,9 +130,12 @@ std::string ProductBookParser::categoryID()
  */
 Product* ProductBookParser::makeProduct()
 {
-
-
+    // dynamically allocates a new Book with the data members
+    Product* bookProduct = new Book("Book", prodName_, price_, qty_, isbn_, author_);
+    return bookProduct;
 }
+
+
 
 
 ProductClothingParser::ProductClothingParser()
@@ -185,7 +188,9 @@ std::string ProductClothingParser::categoryID()
  */
 Product* ProductClothingParser::makeProduct()
 {
-
+    // dynamically allocates a new Clothing with the data members
+    Product* clothingProduct = new Clothing("Clothing", prodName_, price_, qty_, size_, brand_);
+    return clothingProduct;
 
 
 }
@@ -245,6 +250,8 @@ std::string ProductMovieParser::categoryID()
  */
 Product* ProductMovieParser::makeProduct()
 {
-
+    // dynamically allocates a new Movie with the data members
+    Product* movieProduct = new Movie("Movie", prodName_, price_, qty_, genre_, rating_);
+    return movieProduct;
 
 }
